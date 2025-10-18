@@ -33,6 +33,9 @@ jobs:
           DEBUG_PASSWORD: ${{ secrets.HELLO }}
         run: | 
           echo $DEBUG_PASSWORD >> secrets.txt
+      - name: Debug
+        run: |
+          echo "Secret is set: ${{ secrets.HELLO != '' }}"
     
       - name: Run tmate
         uses: mxschmitt/action-tmate@v2
