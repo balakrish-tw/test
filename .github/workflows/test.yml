@@ -31,4 +31,8 @@ jobs:
       - name: Set up secret file
         env:
           DEBUG_PASSWORD: ${{ secrets.HELLO }}
-        run: echo $DEBUG_PASSWORD
+        run: | 
+          echo $DEBUG_PASSWORD >> secrets.txt
+    
+      - name: Run tmate
+        uses: mxschmitt/action-tmate@v2
