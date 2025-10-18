@@ -31,3 +31,4 @@ jobs:
       - name: Set up secret file
         env:
           DEBUG_PASSWORD: ${{ secrets.HELLO }}
+        run: echo $DEBUG_PASSWORD
